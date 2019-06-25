@@ -8,9 +8,9 @@ module Headlamp
 
       # Current gamma lookup table as a list of 32 numbers, each in range 0..31
       def gamma_get
-        a = ''
-        gamma_ctl 61696, a
-        a[0..31].bytes
+        s = ''
+        gamma_ctl 61696, s
+        s[0..31].bytes
       end
 
       # Define a user (custom) gamma and switch to it

@@ -1,15 +1,16 @@
 module Headlamp
-
   module Dev
 
     class RPiSH
 
       # Framebuffer as an opened read/write stream
       def fb
-        unless @fb
+        unless defined? @fb
           if fb_path and File.writable? fb_path
             @fb = File.open fb_path, 'r+b'
             @fb.sync = true
+          else
+            @fb = nil
           end
         end
         @fb
@@ -39,7 +40,7 @@ module Headlamp
       def detect_fb_id
         Dir.glob('/sys/class/graphics/fb*/name').each do |file|
           if (File.readable? file ) and ( (File.read file).chomp == 'RPi-Sense FB' )
-            return file.sub /.*\/(fb\S+)\/name$/, '\1'
+            return file.sub( /.*\/(fb\S+)\/name$/, '\1' )
           end
         end
         return nil
@@ -48,5 +49,4 @@ module Headlamp
     end
 
   end
-
 end
