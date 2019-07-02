@@ -6,7 +6,9 @@ class Test_rpish_base < Test::Unit::TestCase
 
   def test_base
     d = Headlamp::Dev::RPiSH.new
-    assert_equal [8, 8, 15], d.config.values_at(:width, :height, :color_depth)
+    assert_equal  8, d.width
+    assert_equal  8, d.height
+    assert_equal 15, d.color_depth
   end
 
 end
