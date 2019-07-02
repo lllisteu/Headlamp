@@ -18,10 +18,12 @@ module Headlamp
 
     def each
       @data.flatten.each { |pixel| yield pixel }
+      automatically_render
     end
 
     def each_with_index
       @data.flatten.each_with_index { |pixel,i| yield pixel,i }
+      automatically_render
     end
 
     def each_with_coordinates
@@ -30,6 +32,7 @@ module Headlamp
           yield pixel, row_number, col_number
         end
       end
+      automatically_render
     end
 
   end
