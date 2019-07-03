@@ -20,16 +20,7 @@ module Headlamp
     end
 
     def mix
-      rgb = [0,0,0]
-      count = @data.flatten.count
-
-      @data.flatten.each do |c|
-        rgb[0] += c.red
-        rgb[1] += c.green
-        rgb[2] += c.blue
-      end
-
-      RGB.new( [rgb[0]/count, rgb[1]/count, rgb[2]/count] )
+      RGB.new to_a.map(&:values).transpose.map { |a| a.inject(:+) / a.size }
     end
 
     def mix!
