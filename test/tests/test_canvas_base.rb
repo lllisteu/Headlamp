@@ -10,13 +10,22 @@ class Test_canvas_base < Test::Unit::TestCase
 
     sheet = Headlamp::Canvas.new 5
     assert_equal 25, sheet.to_a.size
-    assert_equal 5,  sheet.width
-    assert_equal 5,  sheet.height
+    assert_equal  5, sheet.width
+    assert_equal  5, sheet.height
 
     sheet = Headlamp::Canvas.new 10, 20
     assert_equal 200, sheet.to_a.size
-    assert_equal 10,  sheet.width
-    assert_equal 20,  sheet.height
+    assert_equal  10, sheet.width
+    assert_equal  20, sheet.height
+  end
+
+  def test_init_with_object
+    d = Headlamp::Dev::Generic.new
+    d.config.merge!( { :width => 3, :height => 6 } )
+    sheet = Headlamp::Canvas.new d
+    assert_equal 18, sheet.to_a.size
+    assert_equal  3, sheet.width
+    assert_equal  6, sheet.height
   end
 
   def test_each

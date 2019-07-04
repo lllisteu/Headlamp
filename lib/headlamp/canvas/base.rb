@@ -6,9 +6,26 @@ module Headlamp
 
     attr_reader :width, :height
 
-    def initialize(columns=1,rows=columns)
-      @width  = columns.to_i
-      @height = rows.to_i
+    def initialize(*args)
+      case args.count
+      when 0
+        @width = @height = 1
+      when 1
+        if args.first.respond_to? :to_i
+          @width = @height = args.first
+        elsif args.first.class == Class
+          add_device args.first.new
+          @width  = devices.first.width
+          @height = devices.first.height
+        else
+          add_device args.first
+          @width  = args.first.width
+          @height = args.first.height
+        end
+      when 2
+        @width  = args[0]
+        @height = args[1]
+      end
       @data = Array.new(height) { Array.new(width) { RGB.black } }
     end
 
