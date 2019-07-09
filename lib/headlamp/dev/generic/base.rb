@@ -8,6 +8,7 @@ module Headlamp
           :width       => nil,
           :height      => nil,
           :color_depth => nil,
+          :orientation => 0,
         }
       end
 
@@ -21,6 +22,10 @@ module Headlamp
 
       def color_depth
         config[:color_depth]
+      end
+
+      def orientation
+        config[:orientation]
       end
 
     end

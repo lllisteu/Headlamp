@@ -9,6 +9,8 @@ class Test_dev_generic < Test::Unit::TestCase
       d = Headlamp::Dev::Generic.new
       assert_equal Hash, d.config.class
 
+      assert_equal 0, d.orientation
+
     end
 
 end
