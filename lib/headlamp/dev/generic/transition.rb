@@ -16,7 +16,7 @@ module Headlamp
       end
 
       def transition
-        @transition ||= nil
+        @transition ||= default_transition
       end
 
       def transition=(t)
@@ -30,6 +30,16 @@ module Headlamp
       def render(canvas,params)
         if transition
           send "transition__#{transition}", canvas, params
+        end
+      end
+
+      private
+
+      def default_transition
+        if transitions.any?
+          transitions.include?('none') ? 'none' : transitions.first
+        else
+          nil
         end
       end
 

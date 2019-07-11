@@ -23,7 +23,7 @@ class Test_dev_generic < Test::Unit::TestCase
       d = Headlamp::Dev::Generic.new
       def d.transition__foo;  end
 
-      assert_nil d.transition
+      assert_equal 'foo', d.transition
     end
 
     def test_generic_some_transitions
@@ -34,14 +34,13 @@ class Test_dev_generic < Test::Unit::TestCase
       def d.transition__none; end
 
       assert_equal 3, d.transitions.count
-      assert_nil d.transition
+      assert_equal 'none', d.transition
 
       d.transition = 'bar'
       assert_equal 'bar', d.transition
 
       d.transition = 'none'
       assert_equal 'none', d.transition
-
     end
 
 end
