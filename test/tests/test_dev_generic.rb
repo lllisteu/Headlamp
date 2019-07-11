@@ -11,6 +11,11 @@ class Test_dev_generic < Test::Unit::TestCase
 
       assert_equal 0, d.orientation
 
+      d.orientation = 90
+      assert_equal 90, d.orientation
+      d.orientation = -90
+      assert_equal 270, d.orientation
+
     end
 
 end

@@ -28,6 +28,14 @@ module Headlamp
         config[:orientation]
       end
 
+      def orientation=(degrees)
+        if degrees.remainder(90).nonzero?
+          raise ArgumentError, "#{degrees} is not a valid orientation"
+        else
+          config[:orientation] = degrees % 360
+        end
+      end
+
     end
 
   end
