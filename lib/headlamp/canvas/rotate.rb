@@ -9,6 +9,16 @@ module Headlamp
       automatically_render
     end
 
+    def flip_horizontal!
+      @data.each { |r| r.reverse! }
+      automatically_render
+    end
+
+    def flip_vertical!
+      @data.reverse!
+      automatically_render
+    end
+
   end
 
 end
