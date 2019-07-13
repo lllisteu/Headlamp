@@ -4,7 +4,7 @@ module Headlamp
 
   class Canvas
 
-    attr_reader :width, :height
+    attr_reader :width, :height, :data
 
     def initialize(*args)
       case args.count
