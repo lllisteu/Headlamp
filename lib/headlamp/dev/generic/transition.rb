@@ -11,6 +11,10 @@ module Headlamp
         @speed = v.to_f
       end
 
+      def nap(s)
+        sleep s / speed
+      end
+
       def transitions
         methods.map { |m| m.match( /^transition__(.*)/ ) ? $1 : nil }.compact
       end
