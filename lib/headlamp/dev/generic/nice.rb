@@ -4,7 +4,7 @@ module Headlamp
     class Generic
 
       def inspect
-        "%s (%s x %s, %s)" % [
+        "%s (%sx%s, %s)" % [
           config[:name] || self.class.name,
 
           (width  || '?').to_s,
