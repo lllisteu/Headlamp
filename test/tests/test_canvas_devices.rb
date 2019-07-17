@@ -14,6 +14,8 @@ class Test_canvas_devices < Test::Unit::TestCase
     assert_equal [], sheet.devices
     sheet.add_device Object.new
     assert_equal 1, sheet.devices.count
+
+    assert_equal sheet.devices[0], sheet.dev0
   end
 
 end

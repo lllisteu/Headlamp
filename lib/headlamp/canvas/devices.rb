@@ -15,6 +15,10 @@ module Headlamp
       @dev ||= []
     end
 
+    def dev0
+      devices[0]
+    end
+
     def add_device(d)
       devices.push d
     end
