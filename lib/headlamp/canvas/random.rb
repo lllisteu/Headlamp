@@ -7,7 +7,7 @@ module Headlamp
     end
 
     def shuffle!
-      @data = to_a.shuffle.each_slice(height).to_a
+      @data = to_a.shuffle.each_slice(width).to_a
       automatically_render
     end
 
