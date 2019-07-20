@@ -4,29 +4,41 @@ module Headlamp
 
   class Canvas
 
-    attr_reader :width, :height, :data
+    attr_reader :data
 
     def initialize(*args)
       case args.count
       when 0
-        @width = @height = 1
+        cols = rows = 1
       when 1
         if args.first.respond_to? :to_i
-          @width = @height = args.first
+          cols = rows = args.first
         elsif args.first.class == Class
           add_device args.first.new
-          @width  = devices.first.width
-          @height = devices.first.height
+          cols = devices.first.width
+          rows = devices.first.height
         else
           add_device args.first
-          @width  = args.first.width
-          @height = args.first.height
+          cols = args.first.width
+          rows = args.first.height
         end
       when 2
-        @width  = args[0]
-        @height = args[1]
+        cols = args[0]
+        rows = args[1]
       end
-      @data = Array.new(height) { Array.new(width) { RGB.black } }
+      @data = Array.new(rows) { Array.new(cols) { RGB.black } }
+    end
+
+    def width
+      if @data.map(&:size).uniq.size == 1
+        @data.first.size
+      else
+        raise IndexError, 'row size differs'
+      end
+    end
+
+    def height
+      @data.size
     end
 
     def to_a
