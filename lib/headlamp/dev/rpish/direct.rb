@@ -1,13 +1,9 @@
-# Read/write raw RGB565 data directly from/to framebuffer
-
 module Headlamp
   module Dev
 
     class RPiSH
 
-#     private
-#     you can call these, but you usually wouldn't
-
+      # Read raw RGB565 data directly from the framebuffer
       def peek(*args)
         case args.count
           when 0
@@ -22,6 +18,7 @@ module Headlamp
         end
       end
 
+      # Write raw RGB565 data directly to the framebuffer
       def poke(*args)
         case args.count
           when 1
