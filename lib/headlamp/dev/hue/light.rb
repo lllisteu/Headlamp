@@ -12,5 +12,6 @@ module Headlamp
 end
 
 require 'headlamp/dev/hue/light/base'
+require 'headlamp/dev/hue/light/net'
 require 'headlamp/dev/hue/light/nice'
 require 'headlamp/dev/hue/light/transition'
