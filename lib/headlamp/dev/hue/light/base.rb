@@ -17,6 +17,8 @@ module Headlamp
           config[:name] = get['name']
         end
 
+        undef_method :orientation=
+
       end
 
     end
