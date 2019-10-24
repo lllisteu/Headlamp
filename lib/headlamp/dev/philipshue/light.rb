@@ -2,7 +2,7 @@ require 'headlamp/dev/generic'
 
 module Headlamp
   module Dev
-    module Hue
+    module PhilipsHue
 
       class Light < Headlamp::Dev::Generic
       end
@@ -11,7 +11,7 @@ module Headlamp
   end
 end
 
-require 'headlamp/dev/hue/light/base'
-require 'headlamp/dev/hue/light/net'
-require 'headlamp/dev/hue/light/nice'
-require 'headlamp/dev/hue/light/transition'
+require 'headlamp/dev/philipshue/light/base'
+require 'headlamp/dev/philipshue/light/net'
+require 'headlamp/dev/philipshue/light/nice'
+require 'headlamp/dev/philipshue/light/transition'

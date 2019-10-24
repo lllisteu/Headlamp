@@ -4,10 +4,10 @@ require 'net/http'
 module Headlamp
   module Dev
 
-    module Hue
+    module PhilipsHue
     end
 
   end
 end
 
-require 'headlamp/dev/hue/light'
+require 'headlamp/dev/philipshue/light'

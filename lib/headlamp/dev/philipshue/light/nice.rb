@@ -1,6 +1,6 @@
 module Headlamp
   module Dev
-    module Hue
+    module PhilipsHue
 
       class Light
 
