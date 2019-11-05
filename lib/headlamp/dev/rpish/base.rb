@@ -12,6 +12,11 @@ module Headlamp
         } )
       end
 
+      # Returns true if the device can be reached.
+      def online?
+        !! fb
+      end
+
     end
 
   end

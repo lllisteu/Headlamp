@@ -19,6 +19,11 @@ module Headlamp
 
         undef_method :orientation=
 
+        # Returns true if the device can be reached.
+        def online?
+          get['state']['reachable']
+        end
+
       end
 
     end
