@@ -1,5 +1,8 @@
 require 'headlamp/dev/generic'
 
+require 'net/http'
+require 'json'
+
 module Headlamp
   module Dev
     module PhilipsHue

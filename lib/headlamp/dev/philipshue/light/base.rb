@@ -24,6 +24,11 @@ module Headlamp
           get['state']['reachable']
         end
 
+        # Immediately switch off the light.
+        def off!
+          put '/state', { 'on' => false, 'transitiontime' => 0 }.to_json
+        end
+
       end
 
     end

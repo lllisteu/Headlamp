@@ -17,6 +17,11 @@ module Headlamp
         !! fb
       end
 
+      # Immediately switch off all 64 LEDs.
+      def off!
+        poke "\x00" * 128
+      end
+
     end
 
   end
