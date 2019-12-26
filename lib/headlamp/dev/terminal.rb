@@ -1,5 +1,4 @@
 require 'headlamp/dev/generic'
-require 'redgreenblue/opt/terminal'
 
 module Headlamp
   module Dev

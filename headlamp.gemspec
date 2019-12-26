@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>=2.2.0'
 
-  s.add_runtime_dependency 'redgreenblue', '~>0.7', '>=0.7.6'
+  s.add_runtime_dependency 'redgreenblue', '~>0.8', '>=0.8.0'
 
 end
