@@ -8,7 +8,7 @@ module Headlamp
           :name        => 'Sense HAT LED matrix',
           :width       =>  8,
           :height      =>  8,
-          :color_depth => 15,
+          :color_depth => 16,
         } )
       end
 

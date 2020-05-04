@@ -8,7 +8,7 @@ class Test_rpish_base < Test::Unit::TestCase
     d = Headlamp::Dev::RPiSH.new
     assert_equal  8, d.width
     assert_equal  8, d.height
-    assert_equal 15, d.color_depth
+    assert_equal 16, d.color_depth
   end
 
 end
