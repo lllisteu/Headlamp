@@ -17,9 +17,14 @@ module Headlamp
         !! fb
       end
 
-      # Immediately switch off all 64 LEDs.
+      # Immediately switches off all 64 LEDs.
       def off!
         poke "\x00" * 128
+      end
+
+      # Sets all 64 LEDs to a single color.
+      def clear(color=RGB.black)
+        poke color.rgb565 * 64
       end
 
     end
