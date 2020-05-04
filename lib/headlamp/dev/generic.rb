@@ -1,3 +1,5 @@
+require 'redgreenblue'
+
 module Headlamp
   module Dev
 
