@@ -27,6 +27,10 @@ module Headlamp
         poke color.rgb565 * 64
       end
 
+      def index
+        (0..width*height-1).each_slice(width).to_a
+      end
+
     end
 
   end
