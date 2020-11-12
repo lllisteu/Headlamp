@@ -5,9 +5,18 @@ module Headlamp
 
 end
 
-require 'headlamp/canvas/base'
-require 'headlamp/canvas/nice'
-require 'headlamp/canvas/devices'
-require 'headlamp/canvas/misc'
-require 'headlamp/canvas/random'
-require 'headlamp/canvas/rotate'
+%w(
+
+  base
+
+  nice view
+
+  devices
+
+  misc
+
+  random
+
+  rotate
+
+).each { |m| require "headlamp/canvas/#{m}" }
