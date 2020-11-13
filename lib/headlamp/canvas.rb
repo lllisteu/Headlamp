@@ -3,6 +3,10 @@ module Headlamp
   class Canvas
   end
 
+  def self.canvas(*args)
+    Canvas.new(*args)
+  end
+
 end
 
 %w(
@@ -13,7 +17,7 @@ end
 
   devices
 
-  misc
+  misc mix
 
   random
 
